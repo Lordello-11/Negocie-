@@ -1,0 +1,1022 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Negocie+ | A rede para empresas que querem crescer juntas</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#2563eb',
+                        secondary: '#f97316'
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-gray-50 font-sans">
+    <!-- Header -->
+    <header class="bg-white shadow-sm border-b sticky top-0 z-40">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center">
+                    <div class="flex-shrink-0">
+                        <h1 class="text-2xl font-bold text-primary cursor-pointer" onclick="showPage('home')">Negocie+</h1>
+                    </div>
+                </div>
+                <nav class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-8">
+                        <a href="#" onclick="showPage('home')" class="nav-link text-primary font-medium">Home</a>
+                        <a href="#" onclick="showPage('explorar')" class="nav-link text-gray-600 hover:text-primary transition-colors">Explorar</a>
+                        <a href="#" onclick="showPage('projetos')" class="nav-link text-gray-600 hover:text-primary transition-colors">Projetos</a>
+                        <a href="#" onclick="showPage('eventos')" class="nav-link text-gray-600 hover:text-primary transition-colors">Eventos</a>
+                        <a href="#" onclick="showPage('noticias')" class="nav-link text-gray-600 hover:text-primary transition-colors">Notícias</a>
+                        <a href="#" onclick="showPage('contato')" class="nav-link text-gray-600 hover:text-primary transition-colors">Contato</a>
+                    </div>
+                </nav>
+                <div class="flex items-center space-x-4">
+                    <button class="bg-primary text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors">
+                        Entrar
+                    </button>
+                    <button class="border border-primary text-primary px-4 py-2 rounded-lg hover:bg-primary hover:text-white transition-colors">
+                        Cadastrar
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- HOME PAGE -->
+    <div id="home-page" class="page-content">
+        <!-- Hero Section -->
+        <section class="bg-gradient-to-r from-primary to-blue-700 text-white py-20">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <h2 class="text-4xl md:text-6xl font-bold mb-6">
+                    Encontre parceiros.<br>
+                    Compartilhe projetos.<br>
+                    <span class="text-secondary">Expanda seus negócios.</span>
+                </h2>
+                <p class="text-xl mb-8 text-blue-100 max-w-2xl mx-auto">
+                    A rede para empresas que querem crescer juntas. Conecte-se, colabore e descubra novas oportunidades.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <button class="bg-secondary text-white px-8 py-3 rounded-lg text-lg font-semibold hover:bg-orange-600 transition-colors">
+                        Começar Agora
+                    </button>
+                    <button onclick="showPage('explorar')" class="border-2 border-white text-white px-8 py-3 rounded-lg text-lg font-semibold hover:bg-white hover:text-primary transition-colors">
+                        Explorar Empresas
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Search Bar -->
+        <section class="bg-white py-8 shadow-sm">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="max-w-3xl mx-auto">
+                    <div class="relative">
+                        <input type="text" placeholder="Buscar empresas, projetos ou setores..." 
+                               class="w-full px-6 py-4 text-lg border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent">
+                        <button class="absolute right-2 top-2 bg-primary text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition-colors">
+                            🔍 Buscar
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Featured Companies -->
+        <section class="py-16">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-12">
+                    <h3 class="text-3xl font-bold text-gray-900 mb-4">Empresas em Destaque</h3>
+                    <p class="text-gray-600 text-lg">Conheça algumas das empresas que estão fazendo a diferença</p>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Company Cards -->
+                    <div class="bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow p-6 cursor-pointer" onclick="showCompanyProfile('techsolutions')">
+                        <div class="flex items-center mb-4">
+                            <div class="w-16 h-16 bg-blue-100 rounded-lg flex items-center justify-center text-2xl">🏢</div>
+                            <div class="ml-4">
+                                <h4 class="text-xl font-semibold text-gray-900">TechSolutions</h4>
+                                <p class="text-gray-600">Tecnologia</p>
+                            </div>
+                        </div>
+                        <p class="text-gray-700 mb-4">Soluções inovadoras em desenvolvimento de software e consultoria digital.</p>
+                        <div class="flex items-center justify-between">
+                            <span class="text-sm text-gray-500">📍 São Paulo, SP</span>
+                            <span class="text-primary hover:text-blue-700 font-medium">Ver perfil →</span>
+                        </div>
+                    </div>
+
+                    <div class="bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow p-6">
+                        <div class="flex items-center mb-4">
+                            <div class="w-16 h-16 bg-green-100 rounded-lg flex items-center justify-center text-2xl">🌱</div>
+                            <div class="ml-4">
+                                <h4 class="text-xl font-semibold text-gray-900">EcoVerde</h4>
+                                <p class="text-gray-600">Sustentabilidade</p>
+                            </div>
+                        </div>
+                        <p class="text-gray-700 mb-4">Consultoria em sustentabilidade e soluções ambientais para empresas.</p>
+                        <div class="flex items-center justify-between">
+                            <span class="text-sm text-gray-500">📍 Rio de Janeiro, RJ</span>
+                            <span class="text-primary hover:text-blue-700 font-medium">Ver perfil →</span>
+                        </div>
+                    </div>
+
+                    <div class="bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow p-6">
+                        <div class="flex items-center mb-4">
+                            <div class="w-16 h-16 bg-orange-100 rounded-lg flex items-center justify-center text-2xl">📊</div>
+                            <div class="ml-4">
+                                <h4 class="text-xl font-semibold text-gray-900">DataAnalytics</h4>
+                                <p class="text-gray-600">Análise de Dados</p>
+                            </div>
+                        </div>
+                        <p class="text-gray-700 mb-4">Transformamos dados em insights estratégicos para o seu negócio.</p>
+                        <div class="flex items-center justify-between">
+                            <span class="text-sm text-gray-500">📍 Belo Horizonte, MG</span>
+                            <span class="text-primary hover:text-blue-700 font-medium">Ver perfil →</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="bg-primary text-white py-16">
+            <div class="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
+                <h3 class="text-3xl font-bold mb-4">Pronto para expandir sua rede de negócios?</h3>
+                <p class="text-xl text-blue-100 mb-8">Junte-se a centenas de empresas que já estão crescendo juntas no Negocie+</p>
+                <button class="bg-secondary text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-orange-600 transition-colors">
+                    Criar Perfil da Empresa
+                </button>
+            </div>
+        </section>
+    </div>
+
+    <!-- EXPLORAR PAGE -->
+    <div id="explorar-page" class="page-content hidden">
+        <div class="bg-white py-8">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h1 class="text-4xl font-bold text-gray-900 mb-8">Explorar Empresas</h1>
+                
+                <!-- Filters -->
+                <div class="bg-gray-50 p-6 rounded-lg mb-8">
+                    <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+                        <select class="border border-gray-300 rounded-lg px-4 py-2">
+                            <option>Todos os Setores</option>
+                            <option>Tecnologia</option>
+                            <option>Sustentabilidade</option>
+                            <option>Análise de Dados</option>
+                            <option>Marketing</option>
+                            <option>Consultoria</option>
+                        </select>
+                        <select class="border border-gray-300 rounded-lg px-4 py-2">
+                            <option>Todas as Localizações</option>
+                            <option>São Paulo, SP</option>
+                            <option>Rio de Janeiro, RJ</option>
+                            <option>Belo Horizonte, MG</option>
+                            <option>Brasília, DF</option>
+                        </select>
+                        <select class="border border-gray-300 rounded-lg px-4 py-2">
+                            <option>Todos os Portes</option>
+                            <option>Startup</option>
+                            <option>Pequena</option>
+                            <option>Média</option>
+                            <option>Grande</option>
+                        </select>
+                        <button class="bg-primary text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition-colors">
+                            Filtrar
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Company Directory -->
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <!-- Company listings -->
+                    <div class="bg-white border rounded-lg p-6 hover:shadow-lg transition-shadow">
+                        <div class="flex items-center mb-4">
+                            <div class="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center text-xl">💼</div>
+                            <div class="ml-3">
+                                <h3 class="font-semibold text-gray-900">MarketPro</h3>
+                                <p class="text-sm text-gray-600">Marketing Digital</p>
+                            </div>
+                        </div>
+                        <p class="text-gray-700 text-sm mb-3">Estratégias de marketing digital para empresas B2B.</p>
+                        <div class="flex items-center justify-between text-sm">
+                            <span class="text-gray-500">📍 São Paulo, SP</span>
+                            <span class="bg-green-100 text-green-800 px-2 py-1 rounded">Ativo</span>
+                        </div>
+                    </div>
+
+                    <div class="bg-white border rounded-lg p-6 hover:shadow-lg transition-shadow">
+                        <div class="flex items-center mb-4">
+                            <div class="w-12 h-12 bg-red-100 rounded-lg flex items-center justify-center text-xl">🏭</div>
+                            <div class="ml-3">
+                                <h3 class="font-semibold text-gray-900">IndustrialTech</h3>
+                                <p class="text-sm text-gray-600">Automação Industrial</p>
+                            </div>
+                        </div>
+                        <p class="text-gray-700 text-sm mb-3">Soluções em automação e IoT para indústrias.</p>
+                        <div class="flex items-center justify-between text-sm">
+                            <span class="text-gray-500">📍 Campinas, SP</span>
+                            <span class="bg-green-100 text-green-800 px-2 py-1 rounded">Ativo</span>
+                        </div>
+                    </div>
+
+                    <div class="bg-white border rounded-lg p-6 hover:shadow-lg transition-shadow">
+                        <div class="flex items-center mb-4">
+                            <div class="w-12 h-12 bg-yellow-100 rounded-lg flex items-center justify-center text-xl">💡</div>
+                            <div class="ml-3">
+                                <h3 class="font-semibold text-gray-900">InovaCorp</h3>
+                                <p class="text-sm text-gray-600">Consultoria</p>
+                            </div>
+                        </div>
+                        <p class="text-gray-700 text-sm mb-3">Consultoria em inovação e transformação digital.</p>
+                        <div class="flex items-center justify-between text-sm">
+                            <span class="text-gray-500">📍 Brasília, DF</span>
+                            <span class="bg-green-100 text-green-800 px-2 py-1 rounded">Ativo</span>
+                        </div>
+                    </div>
+
+                    <div class="bg-white border rounded-lg p-6 hover:shadow-lg transition-shadow">
+                        <div class="flex items-center mb-4">
+                            <div class="w-12 h-12 bg-indigo-100 rounded-lg flex items-center justify-center text-xl">🎯</div>
+                            <div class="ml-3">
+                                <h3 class="font-semibold text-gray-900">TargetSales</h3>
+                                <p class="text-sm text-gray-600">Vendas</p>
+                            </div>
+                        </div>
+                        <p class="text-gray-700 text-sm mb-3">Otimização de processos de vendas B2B.</p>
+                        <div class="flex items-center justify-between text-sm">
+                            <span class="text-gray-500">📍 Rio de Janeiro, RJ</span>
+                            <span class="bg-green-100 text-green-800 px-2 py-1 rounded">Ativo</span>
+                        </div>
+                    </div>
+
+                    <div class="bg-white border rounded-lg p-6 hover:shadow-lg transition-shadow">
+                        <div class="flex items-center mb-4">
+                            <div class="w-12 h-12 bg-pink-100 rounded-lg flex items-center justify-center text-xl">🎨</div>
+                            <div class="ml-3">
+                                <h3 class="font-semibold text-gray-900">DesignStudio</h3>
+                                <p class="text-sm text-gray-600">Design</p>
+                            </div>
+                        </div>
+                        <p class="text-gray-700 text-sm mb-3">Design de interfaces e experiência do usuário.</p>
+                        <div class="flex items-center justify-between text-sm">
+                            <span class="text-gray-500">📍 Florianópolis, SC</span>
+                            <span class="bg-green-100 text-green-800 px-2 py-1 rounded">Ativo</span>
+                        </div>
+                    </div>
+
+                    <div class="bg-white border rounded-lg p-6 hover:shadow-lg transition-shadow">
+                        <div class="flex items-center mb-4">
+                            <div class="w-12 h-12 bg-teal-100 rounded-lg flex items-center justify-center text-xl">🔒</div>
+                            <div class="ml-3">
+                                <h3 class="font-semibold text-gray-900">SecureTech</h3>
+                                <p class="text-sm text-gray-600">Segurança</p>
+                            </div>
+                        </div>
+                        <p class="text-gray-700 text-sm mb-3">Soluções em cibersegurança para empresas.</p>
+                        <div class="flex items-center justify-between text-sm">
+                            <span class="text-gray-500">📍 Porto Alegre, RS</span>
+                            <span class="bg-green-100 text-green-800 px-2 py-1 rounded">Ativo</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- PROJETOS PAGE -->
+    <div id="projetos-page" class="page-content hidden">
+        <div class="bg-white py-8">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex justify-between items-center mb-8">
+                    <h1 class="text-4xl font-bold text-gray-900">Projetos</h1>
+                    <button class="bg-secondary text-white px-6 py-3 rounded-lg hover:bg-orange-600 transition-colors">
+                        + Novo Projeto
+                    </button>
+                </div>
+
+                <!-- Project Filters -->
+                <div class="flex flex-wrap gap-4 mb-8">
+                    <button class="bg-primary text-white px-4 py-2 rounded-lg">Todos</button>
+                    <button class="bg-gray-200 text-gray-700 px-4 py-2 rounded-lg hover:bg-gray-300">Em Andamento</button>
+                    <button class="bg-gray-200 text-gray-700 px-4 py-2 rounded-lg hover:bg-gray-300">Buscando Parceiros</button>
+                    <button class="bg-gray-200 text-gray-700 px-4 py-2 rounded-lg hover:bg-gray-300">Concluídos</button>
+                </div>
+
+                <!-- Projects Grid -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div class="bg-white border rounded-xl p-6 hover:shadow-lg transition-shadow">
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-medium">Em Andamento</span>
+                            <span class="text-gray-500 text-sm">Atualizado há 2 dias</span>
+                        </div>
+                        <h3 class="text-xl font-semibold text-gray-900 mb-3">Sistema de Gestão Sustentável</h3>
+                        <p class="text-gray-700 mb-4">Desenvolvimento de plataforma para monitoramento de práticas sustentáveis em empresas. Integração com sensores IoT e dashboard analítico.</p>
+                        <div class="flex items-center mb-4">
+                            <div class="flex -space-x-2">
+                                <div class="w-8 h-8 bg-blue-500 rounded-full flex items-center justify-center text-white text-xs">T</div>
+                                <div class="w-8 h-8 bg-green-500 rounded-full flex items-center justify-center text-white text-xs">E</div>
+                            </div>
+                            <span class="ml-3 text-sm text-gray-600">TechSolutions + EcoVerde</span>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center space-x-4 text-sm text-gray-500">
+                                <span>💬 12 comentários</span>
+                                <span>📎 8 arquivos</span>
+                            </div>
+                            <button class="text-primary hover:text-blue-700 font-medium">Ver projeto →</button>
+                        </div>
+                    </div>
+
+                    <div class="bg-white border rounded-xl p-6 hover:shadow-lg transition-shadow">
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium">Buscando Parceiros</span>
+                            <span class="text-gray-500 text-sm">Criado há 1 semana</span>
+                        </div>
+                        <h3 class="text-xl font-semibold text-gray-900 mb-3">Análise de Mercado B2B</h3>
+                        <p class="text-gray-700 mb-4">Pesquisa abrangente sobre tendências do mercado B2B no setor de tecnologia. Buscamos parceiros com expertise em pesquisa de mercado.</p>
+                        <div class="flex items-center mb-4">
+                            <div class="flex -space-x-2">
+                                <div class="w-8 h-8 bg-orange-500 rounded-full flex items-center justify-center text-white text-xs">D</div>
+                            </div>
+                            <span class="ml-3 text-sm text-gray-600">DataAnalytics</span>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center space-x-4 text-sm text-gray-500">
+                                <span>💬 5 comentários</span>
+                                <span>📎 3 arquivos</span>
+                            </div>
+                            <button class="text-primary hover:text-blue-700 font-medium">Ver projeto →</button>
+                        </div>
+                    </div>
+
+                    <div class="bg-white border rounded-xl p-6 hover:shadow-lg transition-shadow">
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-sm font-medium">Planejamento</span>
+                            <span class="text-gray-500 text-sm">Criado há 3 dias</span>
+                        </div>
+                        <h3 class="text-xl font-semibold text-gray-900 mb-3">Plataforma de E-commerce B2B</h3>
+                        <p class="text-gray-700 mb-4">Desenvolvimento de marketplace para facilitar transações entre empresas. Foco em automação de processos de compra.</p>
+                        <div class="flex items-center mb-4">
+                            <div class="flex -space-x-2">
+                                <div class="w-8 h-8 bg-purple-500 rounded-full flex items-center justify-center text-white text-xs">M</div>
+                                <div class="w-8 h-8 bg-blue-500 rounded-full flex items-center justify-center text-white text-xs">T</div>
+                            </div>
+                            <span class="ml-3 text-sm text-gray-600">MarketPro + TechSolutions</span>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center space-x-4 text-sm text-gray-500">
+                                <span>💬 8 comentários</span>
+                                <span>📎 15 arquivos</span>
+                            </div>
+                            <button class="text-primary hover:text-blue-700 font-medium">Ver projeto →</button>
+                        </div>
+                    </div>
+
+                    <div class="bg-white border rounded-xl p-6 hover:shadow-lg transition-shadow">
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="bg-gray-100 text-gray-800 px-3 py-1 rounded-full text-sm font-medium">Concluído</span>
+                            <span class="text-gray-500 text-sm">Finalizado há 2 semanas</span>
+                        </div>
+                        <h3 class="text-xl font-semibold text-gray-900 mb-3">Sistema de Automação Industrial</h3>
+                        <p class="text-gray-700 mb-4">Implementação de sistema de automação para linha de produção. Projeto concluído com sucesso e em operação.</p>
+                        <div class="flex items-center mb-4">
+                            <div class="flex -space-x-2">
+                                <div class="w-8 h-8 bg-red-500 rounded-full flex items-center justify-center text-white text-xs">I</div>
+                                <div class="w-8 h-8 bg-blue-500 rounded-full flex items-center justify-center text-white text-xs">T</div>
+                            </div>
+                            <span class="ml-3 text-sm text-gray-600">IndustrialTech + TechSolutions</span>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center space-x-4 text-sm text-gray-500">
+                                <span>💬 24 comentários</span>
+                                <span>📎 32 arquivos</span>
+                            </div>
+                            <button class="text-primary hover:text-blue-700 font-medium">Ver projeto →</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- EVENTOS PAGE -->
+    <div id="eventos-page" class="page-content hidden">
+        <div class="bg-white py-8">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h1 class="text-4xl font-bold text-gray-900 mb-8">Eventos</h1>
+
+                <!-- Event Categories -->
+                <div class="flex flex-wrap gap-4 mb-8">
+                    <button class="bg-primary text-white px-4 py-2 rounded-lg">Todos</button>
+                    <button class="bg-gray-200 text-gray-700 px-4 py-2 rounded-lg hover:bg-gray-300">Workshops</button>
+                    <button class="bg-gray-200 text-gray-700 px-4 py-2 rounded-lg hover:bg-gray-300">Feiras</button>
+                    <button class="bg-gray-200 text-gray-700 px-4 py-2 rounded-lg hover:bg-gray-300">Networking</button>
+                    <button class="bg-gray-200 text-gray-700 px-4 py-2 rounded-lg hover:bg-gray-300">Online</button>
+                </div>
+
+                <!-- Upcoming Events -->
+                <div class="mb-12">
+                    <h2 class="text-2xl font-bold text-gray-900 mb-6">Próximos Eventos</h2>
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                        <div class="bg-white border rounded-xl p-6 hover:shadow-lg transition-shadow">
+                            <div class="flex items-center justify-between mb-4">
+                                <span class="bg-secondary text-white px-3 py-1 rounded-full text-sm font-medium">Workshop</span>
+                                <span class="text-secondary font-bold text-lg">15 FEV</span>
+                            </div>
+                            <h3 class="text-xl font-semibold text-gray-900 mb-3">Parcerias Estratégicas</h3>
+                            <p class="text-gray-700 mb-4">Como formar alianças que geram resultados. Aprenda estratégias práticas para identificar e desenvolver parcerias de sucesso.</p>
+                            <div class="space-y-2 mb-4">
+                                <div class="flex items-center text-sm text-gray-600">
+                                    <span class="mr-2">🕒</span>
+                                    <span>14:00 - 17:00</span>
+                                </div>
+                                <div class="flex items-center text-sm text-gray-600">
+                                    <span class="mr-2">💻</span>
+                                    <span>Online via Zoom</span>
+                                </div>
+                                <div class="flex items-center text-sm text-gray-600">
+                                    <span class="mr-2">👥</span>
+                                    <span>45 inscritos</span>
+                                </div>
+                            </div>
+                            <button class="w-full bg-primary text-white py-2 rounded-lg hover:bg-blue-700 transition-colors">
+                                Inscrever-se
+                            </button>
+                        </div>
+
+                        <div class="bg-white border rounded-xl p-6 hover:shadow-lg transition-shadow">
+                            <div class="flex items-center justify-between mb-4">
+                                <span class="bg-green-500 text-white px-3 py-1 rounded-full text-sm font-medium">Feira</span>
+                                <span class="text-secondary font-bold text-lg">22 FEV</span>
+                            </div>
+                            <h3 class="text-xl font-semibold text-gray-900 mb-3">Feira de Negócios Tech</h3>
+                            <p class="text-gray-700 mb-4">Conecte-se com empresas do setor de tecnologia. Stands, palestras e muito networking em um só lugar.</p>
+                            <div class="space-y-2 mb-4">
+                                <div class="flex items-center text-sm text-gray-600">
+                                    <span class="mr-2">🕒</span>
+                                    <span>09:00 - 18:00</span>
+                                </div>
+                                <div class="flex items-center text-sm text-gray-600">
+                                    <span class="mr-2">📍</span>
+                                    <span>Centro de Convenções - São Paulo, SP</span>
+                                </div>
+                                <div class="flex items-center text-sm text-gray-600">
+                                    <span class="mr-2">👥</span>
+                                    <span>230 inscritos</span>
+                                </div>
+                            </div>
+                            <button class="w-full bg-primary text-white py-2 rounded-lg hover:bg-blue-700 transition-colors">
+                                Inscrever-se
+                            </button>
+                        </div>
+
+                        <div class="bg-white border rounded-xl p-6 hover:shadow-lg transition-shadow">
+                            <div class="flex items-center justify-between mb-4">
+                                <span class="bg-purple-500 text-white px-3 py-1 rounded-full text-sm font-medium">Investimento</span>
+                                <span class="text-secondary font-bold text-lg">01 MAR</span>
+                            </div>
+                            <h3 class="text-xl font-semibold text-gray-900 mb-3">Rodada de Investimentos</h3>
+                            <p class="text-gray-700 mb-4">Apresente seu projeto para investidores. Oportunidade única para conseguir funding para sua empresa.</p>
+                            <div class="space-y-2 mb-4">
+                                <div class="flex items-center text-sm text-gray-600">
+                                    <span class="mr-2">🕒</span>
+                                    <span>09:00 - 12:00</span>
+                                </div>
+                                <div class="flex items-center text-sm text-gray-600">
+                                    <span class="mr-2">💻</span>
+                                    <span>Online via Teams</span>
+                                </div>
+                                <div class="flex items-center text-sm text-gray-600">
+                                    <span class="mr-2">👥</span>
+                                    <span>12 inscritos</span>
+                                </div>
+                            </div>
+                            <button class="w-full bg-primary text-white py-2 rounded-lg hover:bg-blue-700 transition-colors">
+                                Inscrever-se
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Past Events -->
+                <div>
+                    <h2 class="text-2xl font-bold text-gray-900 mb-6">Eventos Anteriores</h2>
+                    <div class="space-y-4">
+                        <div class="bg-gray-50 border rounded-lg p-4 flex items-center justify-between">
+                            <div>
+                                <h3 class="font-semibold text-gray-900">Transformação Digital nas PMEs</h3>
+                                <p class="text-gray-600 text-sm">Workshop realizado em 08 de Fevereiro</p>
+                            </div>
+                            <div class="text-right">
+                                <span class="text-sm text-gray-500">85 participantes</span>
+                                <button class="block text-primary hover:text-blue-700 text-sm font-medium">Ver resumo</button>
+                            </div>
+                        </div>
+
+                        <div class="bg-gray-50 border rounded-lg p-4 flex items-center justify-between">
+                            <div>
+                                <h3 class="font-semibold text-gray-900">Networking Empresarial</h3>
+                                <p class="text-gray-600 text-sm">Evento presencial realizado em 25 de Janeiro</p>
+                            </div>
+                            <div class="text-right">
+                                <span class="text-sm text-gray-500">120 participantes</span>
+                                <button class="block text-primary hover:text-blue-700 text-sm font-medium">Ver resumo</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- NOTÍCIAS PAGE -->
+    <div id="noticias-page" class="page-content hidden">
+        <div class="bg-white py-8">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h1 class="text-4xl font-bold text-gray-900 mb-8">Notícias</h1>
+
+                <!-- Featured News -->
+                <div class="mb-12">
+                    <div class="bg-gradient-to-r from-primary to-blue-700 text-white rounded-xl p-8 mb-8">
+                        <span class="bg-secondary px-3 py-1 rounded-full text-sm font-medium">Em Alta</span>
+                        <h2 class="text-3xl font-bold mt-4 mb-4">Negocie+ atinge marca de 1000 empresas cadastradas</h2>
+                        <p class="text-blue-100 text-lg mb-4">Plataforma celebra crescimento exponencial e anuncia novas funcionalidades para facilitar parcerias empresariais.</p>
+                        <button class="bg-white text-primary px-6 py-2 rounded-lg font-medium hover:bg-gray-100 transition-colors">
+                            Ler mais →
+                        </button>
+                    </div>
+                </div>
+
+                <!-- News Categories -->
+                <div class="flex flex-wrap gap-4 mb-8">
+                    <button class="bg-primary text-white px-4 py-2 rounded-lg">Todas</button>
+                    <button class="bg-gray-200 text-gray-700 px-4 py-2 rounded-lg hover:bg-gray-300">Plataforma</button>
+                    <button class="bg-gray-200 text-gray-700 px-4 py-2 rounded-lg hover:bg-gray-300">Parcerias</button>
+                    <button class="bg-gray-200 text-gray-700 px-4 py-2 rounded-lg hover:bg-gray-300">Mercado</button>
+                    <button class="bg-gray-200 text-gray-700 px-4 py-2 rounded-lg hover:bg-gray-300">Tecnologia</button>
+                </div>
+
+                <!-- News Grid -->
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <article class="bg-white border rounded-xl overflow-hidden hover:shadow-lg transition-shadow">
+                        <div class="h-48 bg-gradient-to-br from-blue-400 to-blue-600 flex items-center justify-center">
+                            <span class="text-white text-4xl">🤝</span>
+                        </div>
+                        <div class="p-6">
+                            <span class="text-secondary text-sm font-medium">Parcerias</span>
+                            <h3 class="text-xl font-semibold text-gray-900 mt-2 mb-3">Nova parceria entre TechSolutions e EcoVerde gera projeto inovador</h3>
+                            <p class="text-gray-700 text-sm mb-4">Empresas se unem para desenvolver sistema de monitoramento sustentável que promete revolucionar o setor.</p>
+                            <div class="flex items-center justify-between">
+                                <span class="text-gray-500 text-xs">Há 2 dias</span>
+                                <button class="text-primary hover:text-blue-700 text-sm font-medium">Ler mais →</button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="bg-white border rounded-xl overflow-hidden hover:shadow-lg transition-shadow">
+                        <div class="h-48 bg-gradient-to-br from-green-400 to-green-600 flex items-center justify-center">
+                            <span class="text-white text-4xl">📈</span>
+                        </div>
+                        <div class="p-6">
+                            <span class="text-secondary text-sm font-medium">Mercado</span>
+                            <h3 class="text-xl font-semibold text-gray-900 mt-2 mb-3">Mercado B2B cresce 25% no último trimestre</h3>
+                            <p class="text-gray-700 text-sm mb-4">Estudo revela crescimento significativo nas transações entre empresas, impulsionado pela digitalização.</p>
+                            <div class="flex items-center justify-between">
+                                <span class="text-gray-500 text-xs">Há 1 semana</span>
+                                <button class="text-primary hover:text-blue-700 text-sm font-medium">Ler mais →</button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="bg-white border rounded-xl overflow-hidden hover:shadow-lg transition-shadow">
+                        <div class="h-48 bg-gradient-to-br from-purple-400 to-purple-600 flex items-center justify-center">
+                            <span class="text-white text-4xl">🚀</span>
+                        </div>
+                        <div class="p-6">
+                            <span class="text-secondary text-sm font-medium">Plataforma</span>
+                            <h3 class="text-xl font-semibold text-gray-900 mt-2 mb-3">Negocie+ lança ferramenta de matching automático</h3>
+                            <p class="text-gray-700 text-sm mb-4">Nova funcionalidade usa IA para conectar empresas com interesses complementares de forma automática.</p>
+                            <div class="flex items-center justify-between">
+                                <span class="text-gray-500 text-xs">Há 1 semana</span>
+                                <button class="text-primary hover:text-blue-700 text-sm font-medium">Ler mais →</button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="bg-white border rounded-xl overflow-hidden hover:shadow-lg transition-shadow">
+                        <div class="h-48 bg-gradient-to-br from-orange-400 to-orange-600 flex items-center justify-center">
+                            <span class="text-white text-4xl">💡</span>
+                        </div>
+                        <div class="p-6">
+                            <span class="text-secondary text-sm font-medium">Tecnologia</span>
+                            <h3 class="text-xl font-semibold text-gray-900 mt-2 mb-3">Inteligência Artificial transforma parcerias empresariais</h3>
+                            <p class="text-gray-700 text-sm mb-4">Como a IA está revolucionando a forma como empresas encontram e desenvolvem parcerias estratégicas.</p>
+                            <div class="flex items-center justify-between">
+                                <span class="text-gray-500 text-xs">Há 2 semanas</span>
+                                <button class="text-primary hover:text-blue-700 text-sm font-medium">Ler mais →</button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="bg-white border rounded-xl overflow-hidden hover:shadow-lg transition-shadow">
+                        <div class="h-48 bg-gradient-to-br from-red-400 to-red-600 flex items-center justify-center">
+                            <span class="text-white text-4xl">🏆</span>
+                        </div>
+                        <div class="p-6">
+                            <span class="text-secondary text-sm font-medium">Parcerias</span>
+                            <h3 class="text-xl font-semibold text-gray-900 mt-2 mb-3">Projeto colaborativo vence prêmio de inovação</h3>
+                            <p class="text-gray-700 text-sm mb-4">Parceria formada através do Negocie+ é reconhecida como melhor projeto de inovação do ano.</p>
+                            <div class="flex items-center justify-between">
+                                <span class="text-gray-500 text-xs">Há 2 semanas</span>
+                                <button class="text-primary hover:text-blue-700 text-sm font-medium">Ler mais →</button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="bg-white border rounded-xl overflow-hidden hover:shadow-lg transition-shadow">
+                        <div class="h-48 bg-gradient-to-br from-teal-400 to-teal-600 flex items-center justify-center">
+                            <span class="text-white text-4xl">🌍</span>
+                        </div>
+                        <div class="p-6">
+                            <span class="text-secondary text-sm font-medium">Mercado</span>
+                            <h3 class="text-xl font-semibold text-gray-900 mt-2 mb-3">Sustentabilidade impulsiona novos negócios</h3>
+                            <p class="text-gray-700 text-sm mb-4">Empresas focadas em sustentabilidade lideram crescimento em parcerias e projetos colaborativos.</p>
+                            <div class="flex items-center justify-between">
+                                <span class="text-gray-500 text-xs">Há 3 semanas</span>
+                                <button class="text-primary hover:text-blue-700 text-sm font-medium">Ler mais →</button>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- CONTATO PAGE -->
+    <div id="contato-page" class="page-content hidden">
+        <div class="bg-white py-8">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h1 class="text-4xl font-bold text-gray-900 mb-8 text-center">Entre em Contato</h1>
+                
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                    <!-- Contact Form -->
+                    <div>
+                        <h2 class="text-2xl font-semibold text-gray-900 mb-6">Envie sua mensagem</h2>
+                        <form class="space-y-6">
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-2">Nome da Empresa</label>
+                                <input type="text" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent" placeholder="Sua empresa">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-2">Email</label>
+                                <input type="email" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent" placeholder="contato@suaempresa.com">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-2">Telefone</label>
+                                <input type="tel" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent" placeholder="(11) 99999-9999">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-2">Assunto</label>
+                                <select class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent">
+                                    <option>Dúvidas sobre a plataforma</option>
+                                    <option>Suporte técnico</option>
+                                    <option>Parcerias comerciais</option>
+                                    <option>Sugestões</option>
+                                    <option>Outros</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-2">Mensagem</label>
+                                <textarea rows="5" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent" placeholder="Descreva como podemos ajudar..."></textarea>
+                            </div>
+                            <button type="submit" class="w-full bg-primary text-white py-3 rounded-lg hover:bg-blue-700 transition-colors font-medium">
+                                Enviar Mensagem
+                            </button>
+                        </form>
+                    </div>
+
+                    <!-- Contact Info -->
+                    <div>
+                        <h2 class="text-2xl font-semibold text-gray-900 mb-6">Outras formas de contato</h2>
+                        
+                        <div class="space-y-6">
+                            <div class="flex items-start">
+                                <div class="w-12 h-12 bg-primary rounded-lg flex items-center justify-center text-white text-xl mr-4">
+                                    📧
+                                </div>
+                                <div>
+                                    <h3 class="font-semibold text-gray-900">Email</h3>
+                                    <p class="text-gray-600">contato@negociemais.com.br</p>
+                                    <p class="text-gray-600">suporte@negociemais.com.br</p>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start">
+                                <div class="w-12 h-12 bg-primary rounded-lg flex items-center justify-center text-white text-xl mr-4">
+                                    📱
+                                </div>
+                                <div>
+                                    <h3 class="font-semibold text-gray-900">Telefone</h3>
+                                    <p class="text-gray-600">(11) 3000-0000</p>
+                                    <p class="text-gray-600">WhatsApp: (11) 99000-0000</p>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start">
+                                <div class="w-12 h-12 bg-primary rounded-lg flex items-center justify-center text-white text-xl mr-4">
+                                    📍
+                                </div>
+                                <div>
+                                    <h3 class="font-semibold text-gray-900">Endereço</h3>
+                                    <p class="text-gray-600">Av. Paulista, 1000 - Sala 500</p>
+                                    <p class="text-gray-600">São Paulo, SP - 01310-100</p>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start">
+                                <div class="w-12 h-12 bg-primary rounded-lg flex items-center justify-center text-white text-xl mr-4">
+                                    🕒
+                                </div>
+                                <div>
+                                    <h3 class="font-semibold text-gray-900">Horário de Atendimento</h3>
+                                    <p class="text-gray-600">Segunda a Sexta: 9h às 18h</p>
+                                    <p class="text-gray-600">Sábado: 9h às 12h</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Social Media -->
+                        <div class="mt-8">
+                            <h3 class="font-semibold text-gray-900 mb-4">Siga-nos nas redes sociais</h3>
+                            <div class="flex space-x-4">
+                                <a href="#" class="w-10 h-10 bg-blue-600 rounded-lg flex items-center justify-center text-white hover:bg-blue-700 transition-colors">
+                                    💼
+                                </a>
+                                <a href="#" class="w-10 h-10 bg-blue-400 rounded-lg flex items-center justify-center text-white hover:bg-blue-500 transition-colors">
+                                    🐦
+                                </a>
+                                <a href="#" class="w-10 h-10 bg-pink-600 rounded-lg flex items-center justify-center text-white hover:bg-pink-700 transition-colors">
+                                    📷
+                                </a>
+                                <a href="#" class="w-10 h-10 bg-red-600 rounded-lg flex items-center justify-center text-white hover:bg-red-700 transition-colors">
+                                    📺
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- COMPANY PROFILE PAGE -->
+    <div id="company-profile-page" class="page-content hidden">
+        <div class="bg-white">
+            <!-- Company Header -->
+            <div class="bg-gradient-to-r from-blue-600 to-blue-800 text-white">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+                    <div class="flex items-center">
+                        <div class="w-24 h-24 bg-white rounded-xl flex items-center justify-center text-4xl mr-6">
+                            🏢
+                        </div>
+                        <div>
+                            <h1 class="text-4xl font-bold mb-2">TechSolutions</h1>
+                            <p class="text-blue-100 text-lg mb-2">Soluções inovadoras em desenvolvimento de software</p>
+                            <div class="flex items-center space-x-4 text-sm">
+                                <span>📍 São Paulo, SP</span>
+                                <span>👥 50-100 funcionários</span>
+                                <span>🏭 Tecnologia</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                    <!-- Main Content -->
+                    <div class="lg:col-span-2 space-y-8">
+                        <!-- About -->
+                        <section class="bg-white border rounded-xl p-6">
+                            <h2 class="text-2xl font-bold text-gray-900 mb-4">Sobre a Empresa</h2>
+                            <p class="text-gray-700 mb-4">
+                                A TechSolutions é uma empresa especializada em desenvolvimento de software e consultoria digital, 
+                                com foco em soluções inovadoras para empresas de médio e grande porte. Nossa missão é transformar 
+                                ideias em realidade através da tecnologia.
+                            </p>
+                            <p class="text-gray-700">
+                                Com mais de 10 anos de experiência no mercado, já desenvolvemos mais de 200 projetos para 
+                                clientes em diversos setores, sempre priorizando qualidade, inovação e resultados.
+                            </p>
+                        </section>
+
+                        <!-- Active Projects -->
+                        <section class="bg-white border rounded-xl p-6">
+                            <h2 class="text-2xl font-bold text-gray-900 mb-4">Projetos Ativos</h2>
+                            <div class="space-y-4">
+                                <div class="border rounded-lg p-4">
+                                    <div class="flex items-center justify-between mb-2">
+                                        <h3 class="font-semibold text-gray-900">Sistema de Gestão Sustentável</h3>
+                                        <span class="bg-green-100 text-green-800 px-2 py-1 rounded text-sm">Em Andamento</span>
+                                    </div>
+                                    <p class="text-gray-600 text-sm mb-2">Parceria com EcoVerde para desenvolvimento de plataforma de monitoramento ambiental.</p>
+                                    <div class="text-xs text-gray-500">Atualizado há 2 dias</div>
+                                </div>
+
+                                <div class="border rounded-lg p-4">
+                                    <div class="flex items-center justify-between mb-2">
+                                        <h3 class="font-semibold text-gray-900">Plataforma de E-commerce B2B</h3>
+                                        <span class="bg-purple-100 text-purple-800 px-2 py-1 rounded text-sm">Planejamento</span>
+                                    </div>
+                                    <p class="text-gray-600 text-sm mb-2">Desenvolvimento de marketplace em parceria com MarketPro.</p>
+                                    <div class="text-xs text-gray-500">Criado há 3 dias</div>
+                                </div>
+                            </div>
+                        </section>
+
+                        <!-- Portfolio -->
+                        <section class="bg-white border rounded-xl p-6">
+                            <h2 class="text-2xl font-bold text-gray-900 mb-4">Portfólio</h2>
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                <div class="border rounded-lg p-4">
+                                    <h3 class="font-semibold text-gray-900 mb-2">Sistema ERP Personalizado</h3>
+                                    <p class="text-gray-600 text-sm mb-2">Desenvolvimento de sistema completo de gestão empresarial.</p>
+                                    <span class="text-xs text-gray-500">Cliente: Indústria ABC</span>
+                                </div>
+                                <div class="border rounded-lg p-4">
+                                    <h3 class="font-semibold text-gray-900 mb-2">App Mobile de Vendas</h3>
+                                    <p class="text-gray-600 text-sm mb-2">Aplicativo para força de vendas com sincronização offline.</p>
+                                    <span class="text-xs text-gray-500">Cliente: Distribuidora XYZ</span>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+
+                    <!-- Sidebar -->
+                    <div class="space-y-6">
+                        <!-- Contact -->
+                        <div class="bg-white border rounded-xl p-6">
+                            <h3 class="text-lg font-semibold text-gray-900 mb-4">Contato</h3>
+                            <button class="w-full bg-primary text-white py-3 rounded-lg hover:bg-blue-700 transition-colors mb-3">
+                                Entrar em Contato
+                            </button>
+                            <button class="w-full border border-primary text-primary py-3 rounded-lg hover:bg-primary hover:text-white transition-colors">
+                                Seguir Empresa
+                            </button>
+                        </div>
+
+                        <!-- Company Stats -->
+                        <div class="bg-white border rounded-xl p-6">
+                            <h3 class="text-lg font-semibold text-gray-900 mb-4">Estatísticas</h3>
+                            <div class="space-y-3">
+                                <div class="flex justify-between">
+                                    <span class="text-gray-600">Projetos Concluídos</span>
+                                    <span class="font-semibold">45</span>
+                                </div>
+                                <div class="flex justify-between">
+                                    <span class="text-gray-600">Parcerias Ativas</span>
+                                    <span class="font-semibold">8</span>
+                                </div>
+                                <div class="flex justify-between">
+                                    <span class="text-gray-600">Seguidores</span>
+                                    <span class="font-semibold">234</span>
+                                </div>
+                                <div class="flex justify-between">
+                                    <span class="text-gray-600">Avaliação</span>
+                                    <span class="font-semibold">⭐ 4.8/5</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Location -->
+                        <div class="bg-white border rounded-xl p-6">
+                            <h3 class="text-lg font-semibold text-gray-900 mb-4">Localização</h3>
+                            <div class="bg-gray-100 h-32 rounded-lg flex items-center justify-center mb-3">
+                                <span class="text-gray-500">🗺️ Mapa</span>
+                            </div>
+                            <p class="text-gray-600 text-sm">
+                                Av. Faria Lima, 1500<br>
+                                São Paulo, SP - 04538-132
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <h4 class="text-2xl font-bold text-primary mb-4">Negocie+</h4>
+                    <p class="text-gray-400">A rede para empresas que querem crescer juntas.</p>
+                </div>
+                <div>
+                    <h5 class="font-semibold mb-4">Plataforma</h5>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#" onclick="showPage('explorar')" class="hover:text-white transition-colors">Explorar</a></li>
+                        <li><a href="#" onclick="showPage('projetos')" class="hover:text-white transition-colors">Projetos</a></li>
+                        <li><a href="#" onclick="showPage('eventos')" class="hover:text-white transition-colors">Eventos</a></li>
+                        <li><a href="#" onclick="showPage('noticias')" class="hover:text-white transition-colors">Notícias</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h5 class="font-semibold mb-4">Empresa</h5>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#" class="hover:text-white transition-colors">Sobre</a></li>
+                        <li><a href="#" onclick="showPage('contato')" class="hover:text-white transition-colors">Contato</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Ajuda</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Privacidade</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h5 class="font-semibold mb-4">Conecte-se</h5>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">📧</a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">📱</a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">💼</a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
+                <p>&copy; 2025 Negocie+. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Page Navigation System
+        function showPage(pageId) {
+            // Hide all pages
+            const pages = document.querySelectorAll('.page-content');
+            pages.forEach(page => page.classList.add('hidden'));
+            
+            // Show selected page
+            const targetPage = document.getElementById(pageId + '-page');
+            if (targetPage) {
+                targetPage.classList.remove('hidden');
+            }
+            
+            // Update navigation
+            updateNavigation(pageId);
+            
+            // Scroll to top
+            window.scrollTo(0, 0);
+        }
+
+        function updateNavigation(activePageId) {
+            const navLinks = document.querySelectorAll('.nav-link');
+            navLinks.forEach(link => {
+                link.classList.remove('text-primary', 'font-medium');
+                link.classList.add('text-gray-600');
+            });
+            
+            // Find and highlight active nav item
+            const activeLink = document.querySelector(`[onclick="showPage('${activePageId}')"]`);
+            if (activeLink) {
+                activeLink.classList.remove('text-gray-600');
+                activeLink.classList.add('text-primary', 'font-medium');
+            }
+        }
+
+        function showCompanyProfile(companyId) {
+            showPage('company-profile');
+        }
+
+        // Initialize page
+        document.addEventListener('DOMContentLoaded', function() {
+            showPage('home');
+        });
+
+        // Mobile menu functionality
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            if (menu) {
+                menu.classList.toggle('hidden');
+            }
+        }
+
+        // Add mobile menu button
+        window.addEventListener('DOMContentLoaded', function() {
+            const header = document.querySelector('header .flex');
+            const mobileButton = document.createElement('button');
+            mobileButton.innerHTML = '☰';
+            mobileButton.className = 'md:hidden text-gray-600 text-xl';
+            mobileButton.onclick = toggleMobileMenu;
+            header.appendChild(mobileButton);
+        });
+    </script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'980c7d488627068a',t:'MTc1ODE1Mjg1NC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
